@@ -63,7 +63,7 @@ z := structs.IsZero(server)
 i := structs.IsStruct(server)
 ```
 
-structs uses the structs.DefaultTagName variable to look for any existing tags detailing exactly how to tranform each field into a map[string]interface{}. By default this is set to `structs` but you can modify it before any calls to other structs functions to something like `json` for interoperability.
+structs uses the structs.DefaultTagName variable to look for any existing tags detailing exactly how to tranform each field into a map[string]interface{}, among other things. By default this is set to `structs` but you can modify it before any calls to other structs functions to something like `json` for interoperability.
 
 
 ### Struct methods

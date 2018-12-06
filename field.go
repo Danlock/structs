@@ -76,6 +76,10 @@ func (f *Field) Set(val interface{}) error {
 
 	given := reflect.ValueOf(val)
 
+	if reflect.Kind(0) == given.Kind() {
+		return errors.New("given value is an invalid reflect.Kind. If value == nil try the Zero() function instead")
+	}
+
 	if f.value.Kind() != given.Kind() {
 		return fmt.Errorf("wrong kind. got: %s want: %s", given.Kind(), f.value.Kind())
 	}
