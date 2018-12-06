@@ -1,22 +1,14 @@
-# Archived project. No maintenance. 
-
-This project is not maintained anymore and is archived. Feel free to fork and
-make your own changes if needed. For more detail read my blog post: [Taking an indefinite sabbatical from my projects](https://arslan.io/2018/10/09/taking-an-indefinite-sabbatical-from-my-projects/)
-
-Thanks to everyone for their valuable feedback and contributions.
-
 # Structs [![GoDoc](http://img.shields.io/badge/go-documentation-blue.svg?style=flat-square)](http://godoc.org/github.com/fatih/structs) [![Build Status](http://img.shields.io/travis/fatih/structs.svg?style=flat-square)](https://travis-ci.org/fatih/structs) [![Coverage Status](http://img.shields.io/coveralls/fatih/structs.svg?style=flat-square)](https://coveralls.io/r/fatih/structs)
 
 Structs contains various utilities to work with Go (Golang) structs. It was
 initially used by me to convert a struct into a `map[string]interface{}`. With
-time I've added other utilities for structs.  It's basically a high level
-package based on primitives from the reflect package. Feel free to add new
-functions or improve the existing code.
+time Fatih Arslan added other utilities for structs.  It's basically a high level
+package based on primitives from the reflect package.
 
 ## Install
 
 ```bash
-go get github.com/fatih/structs
+go get github.com/danlock/structs
 ```
 
 ## Usage and Examples
@@ -70,6 +62,9 @@ z := structs.IsZero(server)
 // Check if server is a struct or a pointer to struct
 i := structs.IsStruct(server)
 ```
+
+structs uses the structs.DefaultTagName variable to look for any existing tags detailing exactly how to tranform each field into a map[string]interface{}. By default this is set to `structs` but you can modify it before any calls to other structs functions to something like `json` for interoperability.
+
 
 ### Struct methods
 
@@ -164,6 +159,7 @@ for _, f := range s.Fields() {
 
  * [Fatih Arslan](https://github.com/fatih)
  * [Cihangir Savas](https://github.com/cihangir)
+ * [Daniel Lockhart](https://github.com/danlock)
 
 ## License
 
